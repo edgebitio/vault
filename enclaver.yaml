@@ -1,0 +1,22 @@
+version: v1
+name: "enclaver-vault"
+
+sources:
+  app: "vault:enclave-src"
+
+target: "vault:enclave"
+
+ingress:
+  - listen_port: 8200
+
+egress:
+  allow:
+    - 169.254.169.254
+    - kms.*.amazonaws.com
+    - host
+
+kms_proxy:
+  listen_port: 9999
+
+defaults:
+  memory_mb: 3000
