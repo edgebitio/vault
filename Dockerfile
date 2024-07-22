@@ -1,4 +1,4 @@
-FROM vault:latest
+FROM hashicorp/vault:latest
 
 RUN apk update && apk add aws-cli
 
